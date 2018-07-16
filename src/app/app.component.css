@@ -1,0 +1,353 @@
+
+  .responstableSt {
+    margin: 1em 0;
+    width: 20%;
+    overflow: hidden;
+    background: #fff;
+    color: #024457;
+    border-radius: 10px;
+    border: 1px solid #167f92;
+    font-size: 14px;
+  }
+
+  .responstableSt tr {
+    border: 1px solid #d9e4e6;
+  }
+  .responstableSt tr:nth-child(odd) {
+    background-color: #eaf3f3;
+  }
+  .responstableSt th {
+    display: none;
+    border: 1px solid #fff;
+    background-color: #167f92;
+    color: #fff;
+    padding: 1em;
+  }
+  .responstableSt th:first-child {
+    display: table-cell;
+    text-align: center;
+  }
+  .responstableSt th:nth-child(2) {
+    display: table-cell;
+  }
+  .responstableSt th:nth-child(2) span {
+    display: none;
+  }
+  .responstableSt th:nth-child(2):after {
+    content: attr(data-th);
+  }
+  @media (min-width: 120px) {
+    .responstableSt th:nth-child(2) span {
+      display: block;
+    }
+    .responstableSt th:nth-child(2):after {
+      display: none;
+    }
+  }
+  .responstableSt td {
+    display: block;
+    word-wrap: break-word;
+    max-width: 7em;
+    text-align: left;
+  }
+  .responstableSt td:first-child {
+    display: table-cell;
+    text-align: center;
+    border-right: 1px solid #d9e4e6;
+    text-align: left;
+  }
+  @media (min-width: 480px) {
+    .responstableSt td {
+      border: 1px solid #d9e4e6;
+      text-align: left;
+    }
+  }
+  .responstableSt th {
+    text-align: center;
+    margin: 0.5em 1em;
+  }
+  
+  .responstableSt td {
+    text-align: left;
+    margin: 0.5em 1em;
+  }
+
+  .responstableSt td2 {
+    text-align: right;
+    margin: 0.5em 1em;
+  }
+
+
+  .responstableMt {
+    margin: 1em 0;
+    width: 70%;
+    overflow: hidden;
+    background: #fff;
+    color: #024457;
+    border-radius: 10px;
+    border: 1px solid #167f92;
+    font-size: 14px;
+  }
+
+  .responstableMt tr {
+    border: 1px solid #d9e4e6;
+  }
+  .responstableMt tr:nth-child(odd) {
+    background-color: #eaf3f3;
+  }
+  .responstableMt th {
+    display: none;
+    border: 1px solid #fff;
+    background-color: #167f92;
+    color: #fff;
+    padding: 1em;
+  }
+  .responstableMt th:first-child {
+    display: table-cell;
+    text-align: center;
+  }
+  .responstableMt th:nth-child(2) {
+    display: table-cell;
+  }
+  .responstableMt th:nth-child(2) span {
+    display: none;
+  }
+  .responstableMt th:nth-child(2):after {
+    content: attr(data-th);
+  }
+  @media (min-width: 480px) {
+    .responstableMt th:nth-child(2) span {
+      display: block;
+    }
+    .responstableMt th:nth-child(2):after {
+      display: none;
+    }
+  }
+  .responstableMt td {
+    display: block;
+    word-wrap: break-word;
+    max-width: 7em;
+    text-align: left;
+  }
+  .responstableMt td:first-child {
+    display: table-cell;
+    text-align: center;
+    border-right: 1px solid #d9e4e6;
+    text-align: left;
+  }
+  @media (min-width: 480px) {
+    .responstableMt td {
+      border: 1px solid #d9e4e6;
+      text-align: left;
+    }
+  }
+  .responstableMt th {
+    text-align: center;
+    margin: 0.5em 1em;
+  }
+  
+  .responstableMt td {
+    text-align: left;
+    margin: 0.5em 1em;
+  }
+
+  .responstableMt td2 {
+    text-align: right;
+    margin: 0.5em 1em;
+  }
+
+  @media (min-width: 480px) {
+    .responstableMt th, .responstableMt td {
+      display: table-cell;
+      padding: 1em;
+    }
+  }
+
+
+  
+  body {
+    padding: 0 2em;
+    font-family: Arial, sans-serif;
+    color: #024457;
+    background: #f2f2f2;
+  }
+  h1 {
+    font-family: Verdana;
+    font-weight: normal;
+    color: #024457;
+  }
+  h1 span {
+    color: #167f92;
+  }
+
+  .formcontainer {
+
+    width: 80%;
+
+    min-height: 100px;
+
+    overflow: hidden;
+
+    margin: left;
+
+ 
+
+  }
+
+  .formcontainer1 {
+
+    padding-top: 10px;
+
+    width: 50%;
+
+    float: left;
+
+    border-right-style: solid;
+
+    border-right-width: thick;
+
+  }
+
+  .formcontainer2 {
+
+    padding-top: 10px;
+
+    padding-left: 32px;
+
+    margin-left: 52%;
+
+
+
+ 
+
+  
+
+  }
+
+ 
+
+  .formcontainers {
+
+    width: 60%;
+
+    min-height: 100px;
+
+    overflow: hidden;
+
+    margin: left;
+
+ 
+
+  }
+
+  .formcontainer1s {
+
+    padding-top: 10px;
+
+    width: 35%;
+
+    float: left;
+
+  }
+
+  .formcontainer2s {
+
+    padding-top: 10px;
+
+    padding-left: 32px;
+
+    margin-left: 28%;
+
+    border-left-style: solid;
+
+    border-left-width: thick;
+
+  }
+
+ 
+
+  .formtable td {
+
+    padding: 0px 5px 5px 5px;
+
+  }
+
+ 
+  
+  .responstableCt {
+    margin: 1em 0;
+    width: 90%;
+    overflow: hidden;
+    background: #fff;
+    color: #024457;
+    border-radius: 10px;
+    border: 1px solid #167f92;
+    font-size: 14px;
+  }
+
+  .responstableCt tr {
+    border: 1px solid #d9e4e6;
+  }
+  .responstableCt tr:nth-child(odd) {
+    background-color: #eaf3f3;
+  }
+  .responstableCt th {
+    display: none;
+    border: 1px solid #fff;
+    background-color: #167f92;
+    color: #fff;
+    padding: 1em;
+  }
+  .responstableCt th:first-child {
+    display: table-cell;
+    text-align: center;
+  }
+  .responstableCt th:nth-child(2) {
+    display: table-cell;
+  }
+  .responstableCt th:nth-child(2) span {
+    display: none;
+  }
+  .responstableCt th:nth-child(2):after {
+    content: attr(data-th);
+  }
+  @media (min-width: 480px) {
+    .responstableCt th:nth-child(2) span {
+      display: block;
+    }
+    .responstableCt th:nth-child(2):after {
+      display: none;
+    }
+  }
+  .responstableCt td {
+    display: block;
+    word-wrap: break-word;
+    max-width: 7em;
+    text-align: left;
+  }
+  .responstableCt td:first-child {
+    display: table-cell;
+    text-align: center;
+    border-right: 1px solid #d9e4e6;
+    text-align: left;
+  }
+  @media (min-width: 480px) {
+    .responstableCt td {
+      border: 1px solid #d9e4e6;
+      text-align: left;
+    }
+  }
+  .responstableCt th {
+    text-align: center;
+    margin: 0.5em 1em;
+  }
+  
+  .responstableCt td {
+    text-align: left;
+    margin: 0.5em 1em;
+  }
+
+  .responstableCt td2 {
+    text-align: right;
+    margin: 0.5em 1em;
+  }

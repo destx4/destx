@@ -2,25 +2,45 @@
   Destx Payout System
 </h1>
 
-<table class ="responstableMt">
+<section class="formcontainer">
+  <div class="formcontainer1">
+      <h4>Add Players</h4>
+<table class ="responstableCt">
   <thead>
       <tr>
-          <th width="100%">Player Name</th>
+          <th width="50%">Player Name</th>
+          <th width="50%">Submit</th>
       </tr>
   </thead>
 <tbody>
-  <tr>
-  <td><input type="text" [(ngModel)]="newGroup.name"> </td>
+  <tr >
+  <td style="text-align: center"><input type="text" [(ngModel)]="newGroup.name"> </td>
+  <td style="margin: 0 auto; display: table;"><button mat-raised-button color="primary" (click)="playerSubmit()" >Submit</button></td>
   </tr>
 </tbody>
 </table>
-<br><br>
+</div>
+<div class="formcontainer2">
 
-<button mat-raised-button color="primary" (click)="playerSubmit()" >Submit Players</button>
+
 
 
 <h4>Players List</h4>
+<table class ="responstableCt">
+    <thead>
+        <tr>
+            <th width="50%">Name</th>
+            <th width="50%">Remove</th>
+        </tr>
+    </thead>
+  <tbody>
+    <tr *ngFor="let x of rotateplayers; let i = index">
+    <td style="text-align: center"> {{ x.name }}</td>
+    <td style="margin: 0 auto; display: table;"><button mat-raised-button color="primary" (click)="playerDelete(x.id, i)">Remove</button></td>
+    </tr>
+  </tbody>
+  </table>
 
-<ul *ngFor="let x of rotateplayers">
-  <li>name: {{ x.name }}</li>
-</ul>
+
+</div>
+</section>
