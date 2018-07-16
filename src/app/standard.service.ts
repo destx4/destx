@@ -4,8 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 
-export class Players {
-  id: number;
+export class players {
   name: string;
   owed: number;
   earned: number;

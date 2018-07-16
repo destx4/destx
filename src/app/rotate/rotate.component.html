@@ -1,7 +1,7 @@
 <h1>
   Destx Payout System
 </h1>
-<!-- 
+
 <table class ="responstableMt">
   <thead>
       <tr>
@@ -10,11 +10,17 @@
   </thead>
 <tbody>
   <tr>
-  <td><input type="textbox" [(ngModel)]="players.name"> </td>
-
+  <td><input type="text" [(ngModel)]="newGroup.name"> </td>
   </tr>
 </tbody>
-</table> -->
+</table>
+<br><br>
+
+<button mat-raised-button color="primary" (click)="playerSubmit()" >Submit Players</button>
 
 
-<!-- <button mat-raised-button color="primary" (click)="openDialog()" >Test Dialog</button> -->
+<h4>Players List</h4>
+
+<ul *ngFor="let x of rotateplayers">
+  <li>name: {{ x.name }}</li>
+</ul>
