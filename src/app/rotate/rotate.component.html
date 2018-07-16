@@ -14,8 +14,8 @@
   </thead>
 <tbody>
   <tr >
-  <td style="text-align: center"><input type="text" [(ngModel)]="newGroup.name"> </td>
-  <td style="margin: 0 auto; display: table;"><button mat-raised-button color="primary" (click)="playerSubmit()" >Submit</button></td>
+  <td style="text-align: center"><input type="text" [(ngModel)]="newGroup.name" [disabled]="AddDis"> </td>
+  <td style="margin: 0 auto; display: table;"><button mat-raised-button color="primary" (click)="playerSubmit()" [disabled]="AddDis">Submit</button></td>
   </tr>
 </tbody>
 </table>
@@ -36,11 +36,139 @@
   <tbody>
     <tr *ngFor="let x of rotateplayers; let i = index">
     <td style="text-align: center"> {{ x.name }}</td>
-    <td style="margin: 0 auto; display: table;"><button mat-raised-button color="primary" (click)="playerDelete(x.id, i)">Remove</button></td>
+    <td style="margin: 0 auto; display: table;"><button mat-raised-button color="primary" (click)="playerDelete(x.id, i)" [disabled]="RemDis">Remove</button></td>
     </tr>
   </tbody>
   </table>
-
+  <button mat-raised-button color="primary" (click)="lockPlayers()" [disabled]="LockDis">Lock Players List</button>
 
 </div>
 </section>
+
+<div [hidden]="SixDis">
+<h4>First Six</h4>
+<table class ="responstableMt">
+    <thead>
+        <tr>
+            <th width="20%">Team Players</th>
+            <th width="20%">Round Won?</th>
+            <th width="20%">Birdie Count</th>
+            <th width="20%">Sandie Count</th>
+            <th width="20%">Greenie Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let x of set1rotateteams; let i = index">
+        <td style="text-align: center"> {{ x.p1_name }} and {{ x.p2_name }}</td>
+        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set1rotateteams[i].r_earned"></td>
+        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set1rotateteams[i].b_earned"></td>
+        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set1rotateteams[i].s_earned"></td>
+        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set1rotateteams[i].g_earned"></td>
+        </tr>
+
+      </tbody>
+  </table>
+  <br><br>
+  <h4>Second Six</h4>
+<table class ="responstableMt">
+    <thead>
+        <tr>
+            <th width="20%">Team Players</th>
+            <th width="20%">Round Won?</th>
+            <th width="20%">Birdie Count</th>
+            <th width="20%">Sandie Count</th>
+            <th width="20%">Greenie Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let x of set2rotateteams; let i = index">
+        <td style="text-align: center"> {{ x.p1_name }} and {{ x.p2_name }}</td>
+        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set2rotateteams[i].r_earned"></td>
+        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set2rotateteams[i].b_earned"></td>
+        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set2rotateteams[i].s_earned"></td>
+        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set2rotateteams[i].g_earned"></td>
+        </tr>
+
+      </tbody>
+  </table>
+<br><br>
+  <h4>Third Six</h4>
+<table class ="responstableMt">
+    <thead>
+        <tr>
+            <th width="20%">Team Players</th>
+            <th width="20%">Round Won?</th>
+            <th width="20%">Birdie Count</th>
+            <th width="20%">Sandie Count</th>
+            <th width="20%">Greenie Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let x of set3rotateteams; let i = index">
+        <td style="text-align: center"> {{ x.p1_name }} and {{ x.p2_name }}</td>
+        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set3rotateteams[i].r_earned"></td>
+        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set3rotateteams[i].b_earned"></td>
+        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set3rotateteams[i].s_earned"></td>
+        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set3rotateteams[i].g_earned"></td>
+        </tr>
+
+      </tbody>
+    </table>
+<br><br>
+<button mat-raised-button color="primary" (click)="finalSubmit()" [disabled]="FinalDis">Submit Scoring</button>
+</div>
+<section class="formcontainer" [hidden]="PayoutDis">
+    <div class="formcontainer1">
+        <h4>Values</h4>
+  <table class ="responstableCt">
+    <thead>
+        <tr>
+            <th width="50%">Type</th>
+            <th width="50%">Value</th>
+        </tr>
+    </thead>
+  <tbody>
+    <tr>
+    <td style="text-align: center">Round Win </td>
+    <td style="text-align: center"> <input type="number" [disabled]="ValsDis" [(ngModel)]="scores[0].r_val"></td>
+    </tr>
+    <tr>
+    <td style="text-align: center">Birdie Win </td>
+    <td style="text-align: center"> <input type="number" [disabled]="ValsDis" [(ngModel)]="scores[0].b_val"></td>
+    </tr>
+    <tr>
+    <td style="text-align: center">Sandie Win </td>
+    <td style="text-align: center"> <input type="number" [disabled]="ValsDis" [(ngModel)]="scores[0].s_val"></td>
+    </tr>
+    <tr>
+    <td style="text-align: center">Greenie Win </td>
+    <td style="text-align: center"> <input type="number" [disabled]="ValsDis" [(ngModel)]="scores[0].g_val"></td>
+    </tr>
+  </tbody>
+  </table>
+  <br><br>
+  <button mat-raised-button color="primary" (click)="valsSubmit()" [disabled]="ValsDis">Submit Values</button>
+  </div>
+  <div class="formcontainer2">
+  
+  
+  
+  
+  <h4>Payouts</h4>
+  <table class ="responstableCt">
+      <thead>
+          <tr>
+              <th width="50%">Name</th>
+              <th width="50%">Earned</th>
+          </tr>
+      </thead>
+    <tbody>
+      <tr *ngFor="let x of rotateplayers; let i = index">
+      <td style="text-align: center"> {{ x.name }}</td>
+      <td style="text-align: center"> $ {{x.total_earned }} </td>
+      </tr>
+    </tbody>
+    </table>
+  
+  </div>
+  </section>

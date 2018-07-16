@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/rotate', pathMatch: 'full' },
   { path: 'rotate', component: RotateComponent },
   { path: 'home', component: HomeComponent }
 ];
