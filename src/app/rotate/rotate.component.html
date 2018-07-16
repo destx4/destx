@@ -1,8 +1,9 @@
 <h1>
   Destx Payout System
 </h1>
-
-<table class ="responstableMt">
+<section class="formcontainer">
+  <div class="formcontainer1">
+<table class ="responstableSt">
   <thead>
       <tr>
           <th width="100%">Player Name</th>
@@ -10,17 +11,22 @@
   </thead>
 <tbody>
   <tr>
-  <td><input type="text" [(ngModel)]="newGroup.name"> </td>
+  <td>Enter Name: <input type="text" [(ngModel)]="newGroup.name"> </td>
   </tr>
 </tbody>
 </table>
-<br><br>
+</div>
+<div class="formcontainer2">
 
-<button mat-raised-button color="primary" (click)="playerSubmit()" >Submit Players</button>
+<button mat-raised-button color="primary" (click)="playerSubmit()" >Submit Player</button>
 
 
 <h4>Players List</h4>
 
-<ul *ngFor="let x of rotateplayers">
-  <li>name: {{ x.name }}</li>
+<ul *ngFor="let x of rotateplayers; let i = index">
+  <li>name: {{ x.name }}  <button mat-raised-button color="primary" (click)="playerDelete(x.id, i)" >Delete Player</button></li>
+  
 </ul>
+
+</div>
+</section>
