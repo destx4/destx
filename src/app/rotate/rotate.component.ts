@@ -41,6 +41,7 @@ playerSubmit() {
   } else { console.log('Already Exists!');}
  
  this.newGroup.name = null;
+ console.log(this.rotateplayers.length);
 }
 
 playerDelete(id, index) {
