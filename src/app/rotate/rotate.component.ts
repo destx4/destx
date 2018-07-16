@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
+import { Players } from '../standard.service';
 
 @Component({
   selector: 'app-rotate',
@@ -9,7 +10,16 @@ export class RotateComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  // Disablers
+  EntryDis: boolean;
 
+playerSubmit() {
+  this.EntryDis = true;
+}
+
+
+ngOnInit() {
+  this.EntryDis = false;
+
+}
 }
