@@ -1,15 +1,15 @@
 <h1>
   Destx Payout System
 </h1>
-
-<section class="formcontainer">
-  <div class="formcontainer1">
+<br>
+<h6>*Best Viewed on Mobile</h6>
+<br>
       <h4>Add Players</h4>
 <table class ="responstableCt">
   <thead>
       <tr>
-          <th width="50%">Player Name</th>
-          <th width="50%">Submit</th>
+          <th width="70%">Player Name</th>
+          <th width="30%">Submit</th>
       </tr>
   </thead>
 <tbody>
@@ -19,8 +19,8 @@
   </tr>
 </tbody>
 </table>
-</div>
-<div class="formcontainer2">
+
+<br>
 
 
 
@@ -29,8 +29,8 @@
 <table class ="responstableCt">
     <thead>
         <tr>
-            <th width="50%">Name</th>
-            <th width="50%">Remove</th>
+            <th width="70%">Name</th>
+            <th width="30%">Remove</th>
         </tr>
     </thead>
   <tbody>
@@ -42,83 +42,165 @@
   </table>
   <button mat-raised-button color="primary" (click)="lockPlayers()" [disabled]="LockDis">Lock Players List</button>
 
-</div>
-</section>
 
 <div [hidden]="SixDis">
+  <br>
 <h4>First Six</h4>
 <table class ="responstableMt">
     <thead>
         <tr>
-            <th width="20%">Team Players</th>
-            <th width="20%">Round Won?</th>
-            <th width="20%">Birdie Count</th>
-            <th width="20%">Sandie Count</th>
-            <th width="20%">Greenie Count</th>
+            <th *ngFor="let x of set1rotateteams; let i = index">{{ x.p1_name }} and {{ x.p2_name }}</th>
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor="let x of set1rotateteams; let i = index">
-        <td style="text-align: center"> {{ x.p1_name }} and {{ x.p2_name }}</td>
-        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set1rotateteams[i].r_earned"></td>
-        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set1rotateteams[i].b_earned"></td>
-        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set1rotateteams[i].s_earned"></td>
-        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set1rotateteams[i].g_earned"></td>
-        </tr>
-
+    <tbody style="text-align: center" >
+<tr>
+<td style="text-align: center" *ngFor="let x of set1rotateteams; let i = index">Round: <select [disabled]="FinalDis" [(ngModel)]="set1rotateteams[i].r_earned">
+    <option [ngValue]=0>0</option>
+    <option [ngValue]=1>1</option>
+</select></td></tr>
+<tr>
+<td style="text-align: center" *ngFor="let x of set1rotateteams; let i = index">Birdies: <select [disabled]="FinalDis" [(ngModel)]="set1rotateteams[i].b_earned">
+    <option [ngValue]=0>0</option>
+    <option [ngValue]=1>1</option>
+    <option [ngValue]=2>2</option>
+    <option [ngValue]=3>3</option>
+    <option [ngValue]=4>4</option>
+    <option [ngValue]=5>5</option>
+    <option [ngValue]=6>6</option>
+    <option [ngValue]=7>7</option>
+    <option [ngValue]=8>8</option>
+    <option [ngValue]=9>9</option>
+</select></td></tr>
+<tr>
+<td style="text-align: center" *ngFor="let x of set1rotateteams; let i = index">Sandies: <select [disabled]="FinalDis" [(ngModel)]="set1rotateteams[i].s_earned">
+    <option [ngValue]=0>0</option>
+    <option [ngValue]=1>1</option>
+    <option [ngValue]=2>2</option>
+    <option [ngValue]=3>3</option>
+    <option [ngValue]=4>4</option>
+    <option [ngValue]=5>5</option>
+    <option [ngValue]=6>6</option>
+    <option [ngValue]=7>7</option>
+    <option [ngValue]=8>8</option>
+    <option [ngValue]=9>9</option>
+</select></td></tr>
+<tr>
+<td style="text-align: center" *ngFor="let x of set1rotateteams; let i = index">Greenies: <select [disabled]="FinalDis" [(ngModel)]="set1rotateteams[i].g_earned">
+    <option [ngValue]=0>0</option>
+    <option [ngValue]=1>1</option>
+    <option [ngValue]=2>2</option>
+    <option [ngValue]=3>3</option>
+    <option [ngValue]=4>4</option>
+</select></td></tr>
       </tbody>
   </table>
-  <br><br>
+  <br>
   <h4>Second Six</h4>
-<table class ="responstableMt">
-    <thead>
-        <tr>
-            <th width="20%">Team Players</th>
-            <th width="20%">Round Won?</th>
-            <th width="20%">Birdie Count</th>
-            <th width="20%">Sandie Count</th>
-            <th width="20%">Greenie Count</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let x of set2rotateteams; let i = index">
-        <td style="text-align: center"> {{ x.p1_name }} and {{ x.p2_name }}</td>
-        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set2rotateteams[i].r_earned"></td>
-        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set2rotateteams[i].b_earned"></td>
-        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set2rotateteams[i].s_earned"></td>
-        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set2rotateteams[i].g_earned"></td>
-        </tr>
-
-      </tbody>
-  </table>
-<br><br>
-  <h4>Third Six</h4>
-<table class ="responstableMt">
-    <thead>
-        <tr>
-            <th width="20%">Team Players</th>
-            <th width="20%">Round Won?</th>
-            <th width="20%">Birdie Count</th>
-            <th width="20%">Sandie Count</th>
-            <th width="20%">Greenie Count</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let x of set3rotateteams; let i = index">
-        <td style="text-align: center"> {{ x.p1_name }} and {{ x.p2_name }}</td>
-        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set3rotateteams[i].r_earned"></td>
-        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set3rotateteams[i].b_earned"></td>
-        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set3rotateteams[i].s_earned"></td>
-        <td style="text-align: center"> <input type="number" [disabled]="FinalDis" [(ngModel)]="set3rotateteams[i].g_earned"></td>
-        </tr>
-
-      </tbody>
+  <table class ="responstableMt">
+      <thead>
+          <tr>
+              <th *ngFor="let x of set2rotateteams; let i = index">{{ x.p1_name }} and {{ x.p2_name }}</th>
+          </tr>
+      </thead>
+      <tbody style="text-align: center" >
+  <tr>
+  <td style="text-align: center" *ngFor="let x of set2rotateteams; let i = index">Round: <select [disabled]="FinalDis" [(ngModel)]="set2rotateteams[i].r_earned">
+      <option [ngValue]=0>0</option>
+      <option [ngValue]=1>1</option>
+  </select></td></tr>
+  <tr>
+  <td style="text-align: center" *ngFor="let x of set2rotateteams; let i = index">Birdies: <select [disabled]="FinalDis" [(ngModel)]="set2rotateteams[i].b_earned">
+      <option [ngValue]=0>0</option>
+      <option [ngValue]=1>1</option>
+      <option [ngValue]=2>2</option>
+      <option [ngValue]=3>3</option>
+      <option [ngValue]=4>4</option>
+      <option [ngValue]=5>5</option>
+      <option [ngValue]=6>6</option>
+      <option [ngValue]=7>7</option>
+      <option [ngValue]=8>8</option>
+      <option [ngValue]=9>9</option>
+  </select></td></tr>
+  <tr>
+  <td style="text-align: center" *ngFor="let x of set2rotateteams; let i = index">Sandies: <select [disabled]="FinalDis" [(ngModel)]="set2rotateteams[i].s_earned">
+      <option [ngValue]=0>0</option>
+      <option [ngValue]=1>1</option>
+      <option [ngValue]=2>2</option>
+      <option [ngValue]=3>3</option>
+      <option [ngValue]=4>4</option>
+      <option [ngValue]=5>5</option>
+      <option [ngValue]=6>6</option>
+      <option [ngValue]=7>7</option>
+      <option [ngValue]=8>8</option>
+      <option [ngValue]=9>9</option>
+  </select></td></tr>
+  <tr>
+  <td style="text-align: center" *ngFor="let x of set2rotateteams; let i = index">Greenies: <select [disabled]="FinalDis" [(ngModel)]="set2rotateteams[i].g_earned">
+      <option [ngValue]=0>0</option>
+      <option [ngValue]=1>1</option>
+      <option [ngValue]=2>2</option>
+      <option [ngValue]=3>3</option>
+      <option [ngValue]=4>4</option>
+  </select></td></tr>
+        </tbody>
     </table>
-<br><br>
+<br>
+  <h4>Third Six</h4> 
+  <table class ="responstableMt">
+      <thead>
+          <tr>
+              <th *ngFor="let x of set3rotateteams; let i = index">{{ x.p1_name }} and {{ x.p2_name }}</th>
+          </tr>
+      </thead>
+      <tbody style="text-align: center" >
+  <tr>
+  <td style="text-align: center" *ngFor="let x of set3rotateteams; let i = index">Round: <select [disabled]="FinalDis" [(ngModel)]="set3rotateteams[i].r_earned">
+      <option [ngValue]=0>0</option>
+      <option [ngValue]=1>1</option>
+  </select></td></tr>
+  <tr>
+  <td style="text-align: center" *ngFor="let x of set3rotateteams; let i = index">Birdies: <select [disabled]="FinalDis" [(ngModel)]="set3rotateteams[i].b_earned">
+      <option [ngValue]=0>0</option>
+      <option [ngValue]=1>1</option>
+      <option [ngValue]=2>2</option>
+      <option [ngValue]=3>3</option>
+      <option [ngValue]=4>4</option>
+      <option [ngValue]=5>5</option>
+      <option [ngValue]=6>6</option>
+      <option [ngValue]=7>7</option>
+      <option [ngValue]=8>8</option>
+      <option [ngValue]=9>9</option>
+  </select></td></tr>
+  <tr>
+  <td style="text-align: center" *ngFor="let x of set3rotateteams; let i = index">Sandies: <select [disabled]="FinalDis" [(ngModel)]="set3rotateteams[i].s_earned">
+      <option [ngValue]=0>0</option>
+      <option [ngValue]=1>1</option>
+      <option [ngValue]=2>2</option>
+      <option [ngValue]=3>3</option>
+      <option [ngValue]=4>4</option>
+      <option [ngValue]=5>5</option>
+      <option [ngValue]=6>6</option>
+      <option [ngValue]=7>7</option>
+      <option [ngValue]=8>8</option>
+      <option [ngValue]=9>9</option>
+  </select></td></tr>
+  <tr>
+  <td style="text-align: center" *ngFor="let x of set3rotateteams; let i = index">Greenies: <select [disabled]="FinalDis" [(ngModel)]="set3rotateteams[i].g_earned">
+      <option [ngValue]=0>0</option>
+      <option [ngValue]=1>1</option>
+      <option [ngValue]=2>2</option>
+      <option [ngValue]=3>3</option>
+      <option [ngValue]=4>4</option>
+  </select></td></tr>
+        </tbody>
+    </table>
+    <br>
 <button mat-raised-button color="primary" (click)="finalSubmit()" [disabled]="FinalDis">Submit Scoring</button>
-</div>
-<section class="formcontainer" [hidden]="PayoutDis">
-    <div class="formcontainer1">
+  </div>
+
+
+<section [hidden]="PayoutDis">
+<br>
         <h4>Values</h4>
   <table class ="responstableCt">
     <thead>
@@ -146,14 +228,14 @@
     </tr>
   </tbody>
   </table>
-  <br><br>
+  <br>
   <button mat-raised-button color="primary" (click)="valsSubmit()" [disabled]="ValsDis">Submit Values</button>
-  </div>
-  <div class="formcontainer2">
+
+
   
   
   
-  
+  <br>
   <h4>Payouts</h4>
   <table class ="responstableCt">
       <thead>
@@ -170,5 +252,5 @@
     </tbody>
     </table>
   
-  </div>
+
   </section>
